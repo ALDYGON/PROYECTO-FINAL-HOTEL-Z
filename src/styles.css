@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* -------------------------------------
+-------------GLOBALES-------------------
+---------------------------------------- */
+
+
+/* html {
+    scroll-behavior: smooth;
+} */
+
+* {
+    font-family: 'Noto Serif JP', serif;
+}
+
+.fuente1 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.fuente2 {
+    font-family: 'Indie Flower', cursive;
+}
+
+.fuente3 {
+    font-family: 'Palette Mosaic', cursive;
+}
+
+.fuente4 {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.fuente5 {
+    font-family: 'Klee One', cursive;
+}
+
+.fuente6 {
+    font-family: 'Fredoka One', cursive;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.blanco{
+    color: white;
+}
+
+.centrado {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a:visited,
+a:link,
+a:focus,
+a:hover,
+a:active {
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #000000;
+    border: 1px solid black;
+}
+
+.padinear {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+.negrita {
+    font-weight: 900;
+}
+
+.raton:hover {
+    cursor: pointer;
+}

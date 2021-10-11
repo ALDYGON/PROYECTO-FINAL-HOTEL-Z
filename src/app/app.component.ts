@@ -60,9 +60,6 @@ function insertar(producto:Producto,cantidad:number,almacen:Almacen[]):Almacen {
   return almacens
 }
 
-
-
-
 // AUMENTAR CANTIDAD DEL MISMO PRODUCTO
 function aumentar(almacen:Almacen[],producto:Almacen,cantidad:number):void {
   var index = almacen.indexOf(producto)
@@ -106,7 +103,7 @@ var proc2macen2 = insertar(producto2,0,almacen2)
 // AUMENTAR O DISMINUIR UN PRODUCTO EN UN DETERMINADO ALMACEN
 // aumentar(almacen1,proc1macen1,20)
 // aumentar(almacen2,proc1macen2,20)
-// disminuir(almacen1,proc1macen1,30)
+// disminuir(almacen1,proc2macen1,100)
 
 // MOVIENDO
 // mover(almacen1,almacen2,proc1macen1,proc1macen2,20)
