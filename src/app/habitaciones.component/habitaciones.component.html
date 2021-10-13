@@ -1,10 +1,10 @@
 <app-header></app-header>
 <div class="container-fluid">
     <!-- HABITACIONES AND PERFIL -->
-    <div class="container p-0 bg-danger">
+    <div class="container p-0 ">
         <div class="row">
             <!-- SECCION DE HABITACIONES -->
-            <div class="col-12 bg-primary p-0">
+            <div class="col-12  p-0">
                 <div class="relative" style="height: 80px; background: rgb(0, 255, 179);">
                     <p class="absolute centrado fuente6" style="font-size: 40px;">HABITACIONES</p>
                 </div>
@@ -15,31 +15,16 @@
                         <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleMatrimonial">MATRIMONIAL</p>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="collapsibleMatrimonial" style="background: rgb(71, 250, 130);">
-                        <!-- HAB 1 -->
-                        <div class="grid_habitacion" style="border: 2px solid black;">
+                    <div class="collapse navbar-collapse pb-2" id="collapsibleMatrimonial" style="background: rgb(71, 250, 130);">
+                        <!-- HAB  -->
+                        <div class="grid_habitacion mb-3" style="border: 2px solid black;" *ngFor="let habitacion of habitacionesMatrimoniales; let i = index;">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="{{habitacion['img']}}" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">201</p>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
-                            </div>
-                        </div>
-
-                        <!-- HAB 2 -->
-                        <div class="grid_habitacion mt-3" style="border: 2px solid black;">
-                            <div class="item__habitacion relative">
-                                <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
-                                </div>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">202</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">{{habitacion["nombre"]}}</p>
                             </div>
                             <div class="item__habitacion relative">
                                 <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
