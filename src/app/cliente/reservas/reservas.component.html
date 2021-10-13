@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-cabecera></app-cabecera>
 <div class="container-fluid">
     <div class="container p-0">
         <!-- NAME DE CLIENTE -->
@@ -11,39 +11,39 @@
         <!-- ZONA DE MOVIMIENTOS Y RESERVAS -->
 
         <!-- RESER 1 -->
-        <div class="mb-3" style="border: 5px solid black;border-radius: 15px;">
+        <div class="mb-3" style="border: 5px solid black;border-radius: 15px;" *ngFor="let reserva of reservas; let i = index;">
             <div class="grid__movimiento " >
                 <!-- Habitacion -->
                 <div class="item_movimiento relative text-center">
                     <div class="absolute centrado">
-                        <p class="m-0 fuente5 negrita">Matrimonial</p>
-                        <p class="m-0 fuente5 negrita">101</p>
-                        <p class="m-0 fuente5 negrita">100$-dia</p>
+                        <p class="m-0 fuente5 negrita">{{reserva['tipo']}}</p>
+                        <p class="m-0 fuente5 negrita">{{reserva['nombre']}}</p>
+                        <p class="m-0 fuente5 negrita">{{reserva['precioHabDia']}}$-dia</p>
                     </div>
                 </div>
                 <!-- Fecha In-Out -->
                 <div class="item_movimiento relative text-center">
                     <div class="absolute centrado">
-                        <p class="m-0 fuente5 negrita">Ingreso: <span>2021/10/09</span></p>
-                        <p class="m-0 fuente5 negrita">Salida: <span>2021/10/11</span></p>
+                        <p class="m-0 fuente5 negrita">Ingreso: <span>{{reserva['fechaIn']}}</span></p>
+                        <p class="m-0 fuente5 negrita">Salida: <span>{{reserva['fechaOut']}}</span></p>
                     </div>
                 </div>
                 <!-- Precio-Habitacion -->
                 <div class="item_movimiento relative text-center">
-                    <p class="m-0 fuente5 negrita absolute centrado">Precio-Habitacion: <span>200$</span></p>
+                    <p class="m-0 fuente5 negrita absolute centrado">Precio-Habitacion: <span>{{reserva['precioHabitacion']}}$</span></p>
                 </div>
                 <!-- Detalle-Restaurante -->
                 <div class="item_movimiento p-3">
                     <p class="m-0 fuente5 negrita">Restaurante:</p>
                     <div class="">
-                        <p class="m-0 fuente5 ">Arroz con Huevo <span>5$</span></p>
-                        <p class="m-0 fuente5 ">Arroz a la cubana <span>5$</span></p>
-                        <p class="m-0 fuente5 negrita">Total: <span>10$</span></p>
+                        <p class="m-0 fuente5 ">{{reserva['plato1']}} <span>{{reserva['precioPlato1']}}$</span></p>
+                        <p class="m-0 fuente5 ">{{reserva['plato2']}} <span>{{reserva['precioPlato2']}}$</span></p>
+                        <p class="m-0 fuente5 negrita">Total: <span>{{reserva['precioPlato1']+reserva['precioPlato2']}}$</span></p>
                     </div>
                 </div>
                 <!-- Estado -->
                 <div class="item_movimiento relative">
-                    <button class="btn btn-warning negrita fuente5 absolute centrado">En curso...</button>
+                    <button class="btn btn-warning negrita fuente5 absolute centrado" >En curso...</button>
                 </div>
             </div>
         </div>
@@ -161,3 +161,5 @@
         
     </div>
 </div>
+
+

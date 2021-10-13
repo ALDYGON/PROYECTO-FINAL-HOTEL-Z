@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-habitaciones',
-  templateUrl: './habitaciones.component.html',
-  styleUrls: ['./habitaciones.component.css']
+  selector: 'app-rooms',
+  templateUrl: './rooms.component.html',
+  styleUrls: ['./rooms.component.css']
 })
-
-export class HabitacionesComponent implements OnInit {
+export class RoomsComponent implements OnInit {
 
   habitacionesMatrimoniales:any [] = 
   [
@@ -27,7 +26,7 @@ export class HabitacionesComponent implements OnInit {
       "img": "../../assets/images/habitacion.jpg"
     }
   ];
-
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -1,45 +1,30 @@
-<app-header></app-header>
+<app-cabecera></app-cabecera>
 <div class="container-fluid">
-    <!-- RESTAURANTE  -->
-    <div class="container p-0 bg-danger">
+    <!-- HABITACIONES AND PERFIL -->
+    <div class="container p-0 ">
         <div class="row">
-            <!-- SECCION DE RESTAURANTE -->
-            <div class="col-12 bg-primary p-0">
+            <!-- SECCION DE HABITACIONES -->
+            <div class="col-12  p-0">
                 <div class="relative" style="height: 80px; background: rgb(0, 255, 179);">
-                    <p class="absolute centrado fuente6" style="font-size: 40px;">RESTAURANTE</p>
+                    <p class="absolute centrado fuente6" style="font-size: 40px;">HABITACIONES</p>
                 </div>
 
-                <!-- DESAYUNO -->
+                <!-- MATRIMONIAL -->
                 <div>
                     <div class="relative" style="height: 80px; background: rgb(27, 206, 87);">
-                        <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleDesayuno">DESAYUNO</p>
+                        <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleMatrimonial">MATRIMONIAL</p>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="collapsibleDesayuno" style="background: rgb(71, 250, 130);">
-                        <!-- HAB 1 -->
-                        <div class="grid_habitacion" style="border: 2px solid black;">
+                    <div class="collapse navbar-collapse pb-2" id="collapsibleMatrimonial" style="background: rgb(71, 250, 130);">
+                        <!-- HAB  -->
+                        <div class="grid_habitacion mb-3" style="border: 2px solid black;" *ngFor="let habitacion of habitacionesMatrimoniales; let i = index;">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/plato.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="{{habitacion['img']}}" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 20px;">Arroz con huevo y platano <br>5$</p>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
-                            </div>
-                        </div>
-
-                        <!-- HAB 2 -->
-                        <div class="grid_habitacion mt-3" style="border: 2px solid black;">
-                            <div class="item__habitacion relative">
-                                <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/plato.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
-                                </div>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 20px;">Arroz con huevo y platano <br>5$</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">{{habitacion["nombre"]}}</p>
                             </div>
                             <div class="item__habitacion relative">
                                 <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
@@ -48,22 +33,22 @@
                     </div>
                 </div>
 
-                <!-- ALMUERZO -->
+                <!-- TRIPLE -->
                 <div>
                     <div class="relative" style="height: 80px; background: rgb(182, 21, 197);">
-                        <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleAlmuerzo">ALMUERZO</p>
+                        <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleTiple">TRIPLE</p>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="collapsibleAlmuerzo" style="background: rgb(250, 71, 235);">
+                    <div class="collapse navbar-collapse" id="collapsibleTiple" style="background: rgb(250, 71, 235);">
                         <!-- HAB 1 -->
                         <div class="grid_habitacion" style="border: 2px solid black;">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/plato.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 20px;">Arroz con huevo y platano <br>5$</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">301</p>
                             </div>
                             <div class="item__habitacion relative">
                                 <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
@@ -74,11 +59,11 @@
                         <div class="grid_habitacion mt-3" style="border: 2px solid black;">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/plato.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 20px;">Arroz con huevo y platano <br>5$</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">502</p>
                             </div>
                             <div class="item__habitacion relative">
                                 <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
@@ -86,22 +71,22 @@
                         </div>
                     </div>
                 </div>
-                <!-- CENA -->
+                <!-- DOBLE -->
                 <div>
                     <div class="relative" style="height: 80px; background: rgb(194, 197, 21);">
-                        <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleCena">CENA</p>
+                        <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleDoble">DOBLE</p>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="collapsibleCena" style="background: rgb(238, 250, 71);">
+                    <div class="collapse navbar-collapse" id="collapsibleDoble" style="background: rgb(238, 250, 71);">
                         <!-- HAB 1 -->
                         <div class="grid_habitacion" style="border: 2px solid black;">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/plato.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 20px;">Arroz con huevo y platano <br>5$</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">301</p>
                             </div>
                             <div class="item__habitacion relative">
                                 <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
@@ -112,11 +97,49 @@
                         <div class="grid_habitacion mt-3" style="border: 2px solid black;">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/plato.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 20px;">Arroz con huevo y platano <br>5$</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">502</p>
+                            </div>
+                            <div class="item__habitacion relative">
+                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SIMPLE -->
+                <div>
+                    <div class="relative" style="height: 80px; background: rgb(21, 127, 197);">
+                        <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleSimple">SIMPLE</p>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="collapsibleSimple" style="background: rgb(71, 238, 250);">
+                        <!-- HAB 1 -->
+                        <div class="grid_habitacion" style="border: 2px solid black;">
+                            <div class="item__habitacion relative">
+                                <div class=" absolute centrado" style="width: fit-content;">
+                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                </div>
+                            </div>
+                            <div class="item__habitacion relative">
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">301</p>
+                            </div>
+                            <div class="item__habitacion relative">
+                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
+                            </div>
+                        </div>
+
+                        <!-- HAB 2 -->
+                        <div class="grid_habitacion mt-3" style="border: 2px solid black;">
+                            <div class="item__habitacion relative">
+                                <div class=" absolute centrado" style="width: fit-content;">
+                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                </div>
+                            </div>
+                            <div class="item__habitacion relative">
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">502</p>
                             </div>
                             <div class="item__habitacion relative">
                                 <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
