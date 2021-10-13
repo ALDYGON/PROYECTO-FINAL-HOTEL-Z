@@ -7,6 +7,7 @@ import { HabitacionesComponent } from './habitaciones.component/habitaciones.com
 import { RestauranteComponent } from './restaurante.component/restaurante.component.';
 import { HeaderComponent } from './header.component/header.component';
 import { HabitacionComponent } from './habitacion.component/habitacion.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HabitacionComponent } from './habitacion.component/habitacion.component
     HabitacionesComponent,
     HabitacionComponent,
     RestauranteComponent,
-    HeaderComponent
+    HeaderComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule

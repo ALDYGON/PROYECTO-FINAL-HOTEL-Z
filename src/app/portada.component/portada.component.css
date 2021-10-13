@@ -4,7 +4,13 @@
     background-image: url(../../assets/images/portada.jpg) ;
     background-size: cover;
     background-position: center center;
-    
+    position: fixed;
+}
+.ubicacion{
+    font-size: 30px;
+}
+.redesSociales i{
+    font-size: 80px;
 }
 /* =========================================
                     HEADER
@@ -70,5 +76,14 @@
 .Phone1 {}
 
 @media(max-width:575px) {
-    
+    .ubicacion{
+        font-size: 20px;
+        text-align: center;
+    }
+    .redesSociales i{
+        font-size: 40px;
+    }
+    .redesSociales {
+        text-align: center;
+    }
 }

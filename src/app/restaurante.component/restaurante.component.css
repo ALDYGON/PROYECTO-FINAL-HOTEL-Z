@@ -1,0 +1,23 @@
+.grid_habitacion{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.item__habitacion{
+    height: 250px;
+}
+
+.item__habitacion:nth-child(2) p{
+    font-weight: 900;
+}
+
+.Phone1 {}
+
+@media(max-width:575px) {
+    .grid_habitacion{
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+    .item__habitacion:nth-child(2),.item__habitacion:nth-child(3){
+        height: 80px;
+    }
+}

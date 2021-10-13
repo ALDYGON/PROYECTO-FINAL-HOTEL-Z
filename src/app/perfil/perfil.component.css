@@ -1,0 +1,31 @@
+.grid__movimiento{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.item_movimiento{
+    /* background-color: gray;
+    border: 1px solid white; */
+    box-shadow: 5px 5px  5px black;
+}
+
+.Phone1 {}
+
+@media(max-width:575px) {
+    .grid__movimiento{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .item_movimiento:nth-child(1){
+        height: 100px;
+    }
+    .item_movimiento:nth-child(2){
+        height: 120px;
+    }
+    .item_movimiento:nth-child(3){
+        height: 70px;
+    }
+    .item_movimiento:nth-child(5){
+        height: 70px;
+    }
+}
