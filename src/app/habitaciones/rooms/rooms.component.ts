@@ -1,3 +1,5 @@
+import { Room } from './rooms.interface';
+import { HabitacionesService } from './habitaciones.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,29 +9,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomsComponent implements OnInit {
 
-  habitacionesMatrimoniales:any [] = 
-  [
-    {
-      "nombre": "101",
-      "img": "../../assets/images/matrimonial1.jpg"
-    },
-    {
-      "nombre": "102",
-      "img": "../../assets/images/habitacion.jpg"
-    },
-    {
-      "nombre": "302",
-      "img": "../../assets/images/matrimonial1.jpg"
-    },
-    {
-      "nombre": "802",
-      "img": "../../assets/images/habitacion.jpg"
-    }
-  ];
-  
-  constructor() { }
+  rooms:Room[];
+  matrimoniales:Room[];
+  triples:Room[];
+  dobles:Room[];
+  simples:Room[];
+
+  constructor(private habitacionesService:HabitacionesService) {
+    this.rooms = [];
+    this.matrimoniales = [];
+    this.triples = [];
+    this.dobles = [];
+    this.simples = [];
+  }
 
   ngOnInit(): void {
+    this.rooms = this.habitacionesService.getRooms();
+    this.segregar(this.rooms)
+  }
+
+  segregar(rooms:Room[]){
+    for (let i = 0; i < rooms.length; i++) {
+      if (rooms[i].tipo==='Matrimonial') {
+        this.matrimoniales.push(rooms[i]);
+      }
+      else if (rooms[i].tipo==='Triple') {
+        this.triples.push(rooms[i]);
+      }
+      else if (rooms[i].tipo==='Doble') {
+        this.dobles.push(rooms[i]);
+      }
+      else if (rooms[i].tipo==='Simple') {
+        this.simples.push(rooms[i]);
+      }
+    }
+  }
+
+  selectorRoom(id:number){
+    this.habitacionesService.selectRoom(id);
   }
 
 }
+
+
+

@@ -1,7 +1,6 @@
 /* ESTILOS EN PANTALLA GRANDE Y GENERALES */
-
 .portada__contenedor{
-    background-image: url(../../assets/images/portada.jpg) ;
+    background-image: url(../../../assets/images/portada.jpg) ;
     background-size: cover;
     background-position: center center;
     position: fixed;

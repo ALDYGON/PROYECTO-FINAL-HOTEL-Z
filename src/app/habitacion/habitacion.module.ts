@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoomComponent } from './room/room.component';
 import { HeaderModule } from '../header/header.module';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-rounting.module';
 
 
 
@@ -14,7 +16,9 @@ import { HeaderModule } from '../header/header.module';
   ],
   imports: [
     CommonModule,
-    HeaderModule
+    HeaderModule,
+    FormsModule,
+    AppRoutingModule
   ]
 })
 export class HabitacionModule { }

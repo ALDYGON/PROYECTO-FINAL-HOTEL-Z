@@ -1,4 +1,7 @@
+import { Plato } from 'src/app/habitaciones/rooms/rooms.interface';
+import { HabitacionesService } from 'src/app/habitaciones/rooms/habitaciones.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-platos',
@@ -7,54 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatosComponent implements OnInit {
   
-  // DATOS PARA DESAYUNO
-  restauranteDesayuno:any [] = 
-  [
-    {
-      "nombre": "Arroz con Huevo",
-      "img": "../../assets/images/plato.jpg",
-      "precio": 5
-    },
-    {
-      "nombre": "Arroz Chaufa",
-      "img": "../../assets/images/desayuno1.jpg",
-      "precio": 7
-    },
-  ];
+  platos:Plato[];
+  desayunos:Plato[];
+  almuerzos:Plato[];
+  cenas:Plato[];
 
-  // DATOS PARA ALMUERZO
-  restauranteAlmuerzo:any [] = 
-  [
-    {
-      "nombre": "Lomo Saltado",
-      "img": "../../assets/images/almuerzo1.jpg",
-      "precio": 5
-    },
-    {
-      "nombre": "Chicharron-Pescado",
-      "img": "../../assets/images/almuerzo2.jpg",
-      "precio": 7
-    },
-  ];
-
-  // DATOS PARA ALMUERZO
-  restauranteCena:any [] = 
-  [
-    {
-      "nombre": "Pollo Enrrollado",
-      "img": "../../assets/images/cena1.jpg",
-      "precio": 5
-    },
-    {
-      "nombre": "Bistec Montado",
-      "img": "../../assets/images/cena2.jpeg",
-      "precio": 7
-    },
-  ];
-
-  constructor() { }
+  constructor(private habitacionesService:HabitacionesService) { 
+    this.platos = [];
+    this.desayunos = [];
+    this.almuerzos = [];
+    this.cenas = [];
+  }
 
   ngOnInit(): void {
+
+    this.platos = this.habitacionesService.getPlatos();
+    this.segregar(this.platos)
+
+  }
+
+  segregar(platos:Plato[]){
+    for (let i = 0; i < platos.length; i++) {
+      if (platos[i].tipo==='Desayuno') {
+        this.desayunos.push(platos[i]);
+      }
+      else if (platos[i].tipo==='Almuerzo') {
+        this.almuerzos.push(platos[i]);
+      }
+      else if (platos[i].tipo==='Cena') {
+        this.cenas.push(platos[i]);
+      }
+    }
   }
 
 }

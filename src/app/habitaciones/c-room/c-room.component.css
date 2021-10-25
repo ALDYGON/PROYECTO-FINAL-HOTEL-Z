@@ -1,0 +1,8 @@
+.grid-crud-habitaciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.item-crud-habitaciones{
+    background-color: rgb(216, 230, 207);
+    border: 1px solid white;
+}

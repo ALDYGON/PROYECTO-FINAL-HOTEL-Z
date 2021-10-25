@@ -7,6 +7,9 @@ import { ClienteModule } from './cliente/cliente.module';
 import { HabitacionesModule } from './habitaciones/habitaciones.module';
 import { PortadaModule } from './portada/portada.module';
 import { RestauranteModule } from './restaurante/restaurante.module';
+import { AppRoutingModule } from './app-rounting.module';
+import { HeaderModule } from './header/header.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,15 @@ import { RestauranteModule } from './restaurante/restaurante.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HabitacionModule,
     ClienteModule,
     HabitacionesModule,
     PortadaModule,
-    RestauranteModule
+    RestauranteModule,
+    HeaderModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

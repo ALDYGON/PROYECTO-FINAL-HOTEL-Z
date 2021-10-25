@@ -1,0 +1,62 @@
+<app-cabecera></app-cabecera>
+<div class="container">
+  <div class="container-fluid">
+    <div class="grid-crud-habitaciones">
+      <div class="item-crud-habitaciones p-3">
+        <h2 class="fuente6">New Room</h2>
+        <p>
+          <span class="fuente6 mr-3">Nombre:</span>
+          <input style="width: 200px;border-radius: 5px;height: 40px;" class="fuente6 p-2" type="text" [(ngModel)]="room.nombre">
+        </p>
+        <p>
+        <p>
+        <span class="fuente6 mr-3">Precio:</span>
+        <input style="width: 200px;border-radius: 5px;height: 40px;" class="fuente6 p-2" type="number" [(ngModel)]="room.precio">
+        </p>
+        <p>
+        <span class="fuente6">Descripcion:</span>
+        <textarea class="form-control fuente5 negrita mt-2" rows="5"  [(ngModel)]="room.descripcion" style="width: 450px;"></textarea>
+        </p>
+
+        <p>
+          <span class="fuente6 mr-3">Tipo:</span>
+          <select style="width: 200px;border-radius: 5px;height: 40px;"  [(ngModel)]="room.tipo">
+            <option class="fuente5 negrita" value="Matrimonial">Matrimonial</option>
+            <option class="fuente5 negrita" value="Triple">Triple</option>
+            <option class="fuente5 negrita" value="Doble">Doble</option>
+            <option class="fuente5 negrita" value="Simple">Simple</option>
+          </select>
+        </p>
+        <p>
+          <button class="fuente6 btn btn-success" (click)="this.nuevoRoom()" >Crear</button>
+        </p>
+      </div>
+      
+      <!-- LISTA DE HABITACIONES -->
+      <div class="item-crud-habitaciones p-3">
+        <table class="table table-dark">
+          <thead>
+            <tr >
+              <th class="fuente6" scope="col">#</th>
+              <th class="fuente5" scope="col">Tipo</th>
+              <th class="fuente5" scope="col">Nombre</th>
+              <th class="fuente5" scope="col">Precio</th>
+              <th class="fuente5" scope="col">Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let room of rooms,let indice=index">
+              <th scope="row">{{indice+1}}</th>
+              <td class="fuente5">{{room.tipo}}</td>
+              <td class="fuente5">{{room.nombre}}</td>
+              <td class="fuente5">{{room.precio}}$</td>
+              <td class="fuente5"><button class="btn btn-danger negrita" (click)="this.eliminarRoom(room.id)">eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    
+  </div>
+</div>

@@ -3,7 +3,7 @@
     <div class="container p-0">
         <div class="row m-0" style="height: 80px;">
             <div class="col-12 col-sm-8 bg-dark blanco p-0 relative">
-                <p class="m-0 absolute centrado fuente6" style="font-size: 40px;">MATRIMONIAL</p>
+                <p class="m-0 absolute centrado fuente6" style="font-size: 40px;">{{room.tipo}}</p>
             </div>
             <div class="col-0 col-sm-4 p-0"></div>
         </div>
@@ -13,7 +13,7 @@
                 <!-- IZQUIERDA -->
                 <div class="col-12 col-sm-8 px-sm-5 ">
                     <!-- NAME DE LA HABITACION -->
-                    <p class="text-center fuente5 m-0 my-2" style="font-size: 30px;">101</p>
+                    <p class="text-center fuente5 m-0 my-2" style="font-size: 30px;">{{room.nombre}}</p>
 
                     <!-- CARRUSEL DE IMAGENES -->
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -24,13 +24,13 @@
                         </ol>
                         <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="../../assets/images/habitacion.jpg" alt="First slide">
+                            <img class="d-block w-100" src="{{room.img[0]}}" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="../../assets/images/habitacion.jpg" alt="Second slide">
+                            <img class="d-block w-100" src="{{room.img[1]}}" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="../../assets/images/habitacion.jpg" alt="Third slide">
+                            <img class="d-block w-100" src="{{room.img[2]}}" alt="Third slide">
                         </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -44,10 +44,10 @@
                     </div>
 
                     <!-- PRECIO POR DIA -->
-                    <p class="fuente5 negrita m-0" style="font-size: 30px;">300$ por dia</p>
+                    <p class="fuente5 negrita m-0" style="font-size: 30px;">{{room.precio}}$ por dia</p>
                     <!-- DESCRIPCION -->
                     <p class="m-0 text-justify fuente5">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. At labore minus ratione veniam, voluptate sit? Vitae autem sint hic, error voluptas quos id in fugit odit tenetur nemo laboriosam veniam.
+                        {{room.descripcion}}
                     </p>
                 </div>
                     
@@ -55,16 +55,14 @@
                 <div class="col-12 col-sm-4 text-center">
                     <div class="form-group mt-sm-5 mt-3">
                         <label class="fuente6" style="font-size: 30px;" for="usr">Fecha de ingreso:</label>
-                        <input type="date" class="form-control" style="height: 60px;font-size: 25px;" id="usr">
+                        <input type="date" class="form-control" style="height: 60px;font-size: 25px;" id="usr" [(ngModel)]="reserva.ingreso">
                     </div>
                     <div class="form-group">
                         <label class="fuente6" style="font-size: 30px;" for="pwd">Fecha de salida:</label>
-                        <input type="date" class="form-control" style="height: 60px;font-size: 25px;" id="pwd">
+                        <input type="date" class="form-control" style="height: 60px;font-size: 25px;" id="pwd" [(ngModel)]="reserva.salida">
                     </div>
 
-                    <p class="fuente6" style="font-size: 30px;">600$</p>
-
-                    <button type="submit" class="btn btn-primary fuente6" style="font-size: 30px;">Reservar</button>
+                    <button  class="btn btn-primary fuente6" style="font-size: 30px;" routerLink="../perfil" (click)="this.nuevoReserva()" >Reservar</button>
                 </div>
             </div>
         </div>

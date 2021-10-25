@@ -16,34 +16,37 @@
                 <!-- Habitacion -->
                 <div class="item_movimiento relative text-center">
                     <div class="absolute centrado">
-                        <p class="m-0 fuente5 negrita">{{reserva['tipo']}}</p>
-                        <p class="m-0 fuente5 negrita">{{reserva['nombre']}}</p>
-                        <p class="m-0 fuente5 negrita">{{reserva['precioHabDia']}}$-dia</p>
+                        <p class="m-0 fuente5 negrita">{{reserva.habitacion.tipo}}</p>
+                        <p class="m-0 fuente5 negrita">{{reserva.habitacion.nombre}}</p>
+                        <p class="m-0 fuente5 negrita">{{reserva.habitacion.precio}}$-dia</p>
                     </div>
                 </div>
                 <!-- Fecha In-Out -->
                 <div class="item_movimiento relative text-center">
                     <div class="absolute centrado">
-                        <p class="m-0 fuente5 negrita">Ingreso: <span>{{reserva['fechaIn']}}</span></p>
-                        <p class="m-0 fuente5 negrita">Salida: <span>{{reserva['fechaOut']}}</span></p>
+                        <p class="m-0 fuente5 negrita">Ingreso: <span>{{reserva.ingreso}}</span></p>
+                        <p class="m-0 fuente5 negrita">Salida: <span>{{reserva.salida}}</span></p>
                     </div>
                 </div>
                 <!-- Precio-Habitacion -->
                 <div class="item_movimiento relative text-center">
-                    <p class="m-0 fuente5 negrita absolute centrado">Precio-Habitacion: <span>{{reserva['precioHabitacion']}}$</span></p>
+                    <p class="m-0 fuente5 negrita absolute centrado">Precio-Habitacion: <span>{{reserva.precio}}$</span></p>
                 </div>
                 <!-- Detalle-Restaurante -->
                 <div class="item_movimiento p-3">
                     <p class="m-0 fuente5 negrita">Restaurante:</p>
                     <div class="">
-                        <p class="m-0 fuente5 ">{{reserva['plato1']}} <span>{{reserva['precioPlato1']}}$</span></p>
+                        <!-- <p class="m-0 fuente5 ">{{reserva['plato1']}} <span>{{reserva['precioPlato1']}}$</span></p>
                         <p class="m-0 fuente5 ">{{reserva['plato2']}} <span>{{reserva['precioPlato2']}}$</span></p>
-                        <p class="m-0 fuente5 negrita">Total: <span>{{reserva['precioPlato1']+reserva['precioPlato2']}}$</span></p>
+                        <p class="m-0 fuente5 negrita">Total: <span>{{reserva['precioPlato1']+reserva['precioPlato2']}}$</span></p> -->
                     </div>
                 </div>
                 <!-- Estado -->
                 <div class="item_movimiento relative">
-                    <button class="btn btn-warning negrita fuente5 absolute centrado" >En curso...</button>
+                    <button class="btn btn-danger negrita fuente5 absolute centrado" *ngIf="reserva.estado == 0">Reciente</button>
+                    <button class="btn btn-success negrita fuente5 absolute centrado" *ngIf="reserva.estado == 1">Pagado</button>
+                    <button class="btn btn-warning negrita fuente5 absolute centrado" *ngIf="reserva.estado == 2">En curso ...</button>
+                    <button class="btn btn-info negrita fuente5 absolute centrado" *ngIf="reserva.estado == 3">Consumido</button>
                 </div>
             </div>
         </div>

@@ -17,17 +17,17 @@
 
                     <div class="collapse navbar-collapse pb-2" id="collapsibleMatrimonial" style="background: rgb(71, 250, 130);">
                         <!-- HAB  -->
-                        <div class="grid_habitacion mb-3" style="border: 2px solid black;" *ngFor="let habitacion of habitacionesMatrimoniales; let i = index;">
+                        <div class="grid_habitacion mb-3" style="border: 2px solid black;" *ngFor="let room of matrimoniales">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="{{habitacion['img']}}" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="{{room.img[0]}}" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">{{habitacion["nombre"]}}</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">{{room.nombre}}</p>
                             </div>
                             <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
+                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;" routerLink="../habitacion" (click)="this.selectorRoom(room.id)">Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -39,34 +39,19 @@
                         <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleTiple">TRIPLE</p>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="collapsibleTiple" style="background: rgb(250, 71, 235);">
+                    <div class="collapse navbar-collapse pb-2" id="collapsibleTiple" style="background: rgb(250, 71, 235);">
                         <!-- HAB 1 -->
-                        <div class="grid_habitacion" style="border: 2px solid black;">
+                        <div class="grid_habitacion mb-3" style="border: 2px solid black;" *ngFor="let room of triples">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="{{room.img[0]}}" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">301</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">{{room.nombre}}</p>
                             </div>
                             <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
-                            </div>
-                        </div>
-
-                        <!-- HAB 2 -->
-                        <div class="grid_habitacion mt-3" style="border: 2px solid black;">
-                            <div class="item__habitacion relative">
-                                <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
-                                </div>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">502</p>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
+                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;" routerLink="../habitacion" (click)="this.selectorRoom(room.id)">Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -77,34 +62,19 @@
                         <p class="absolute centrado fuente6 raton" style="font-size: 30px;" type="button" data-toggle="collapse" data-target="#collapsibleDoble">DOBLE</p>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="collapsibleDoble" style="background: rgb(238, 250, 71);">
+                    <div class="collapse navbar-collapse pb-2" id="collapsibleDoble" style="background: rgb(238, 250, 71);">
                         <!-- HAB 1 -->
-                        <div class="grid_habitacion" style="border: 2px solid black;">
+                        <div class="grid_habitacion mb-3" style="border: 2px solid black;" *ngFor="let room of dobles">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="{{room.img[0]}}" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">301</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">{{room.nombre}}</p>
                             </div>
                             <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
-                            </div>
-                        </div>
-
-                        <!-- HAB 2 -->
-                        <div class="grid_habitacion mt-3" style="border: 2px solid black;">
-                            <div class="item__habitacion relative">
-                                <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
-                                </div>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">502</p>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
+                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;" routerLink="../habitacion" (click)="this.selectorRoom(room.id)">Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -117,32 +87,17 @@
 
                     <div class="collapse navbar-collapse" id="collapsibleSimple" style="background: rgb(71, 238, 250);">
                         <!-- HAB 1 -->
-                        <div class="grid_habitacion" style="border: 2px solid black;">
+                        <div class="grid_habitacion" style="border: 2px solid black;" *ngFor="let room of simples">
                             <div class="item__habitacion relative">
                                 <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
+                                    <img src="{{room.img[0]}}" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
                                 </div>
                             </div>
                             <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">301</p>
+                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">{{room.nombre}}</p>
                             </div>
                             <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
-                            </div>
-                        </div>
-
-                        <!-- HAB 2 -->
-                        <div class="grid_habitacion mt-3" style="border: 2px solid black;">
-                            <div class="item__habitacion relative">
-                                <div class=" absolute centrado" style="width: fit-content;">
-                                    <img src="../../assets/images/habitacion.jpg" class="img-fluid" style="width: 300px;height: 200px;border: 2px solid black;border-radius: 15px;">
-                                </div>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <p class="m-0 fuente5 absolute centrado" style="font-size: 50px;">502</p>
-                            </div>
-                            <div class="item__habitacion relative">
-                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;">Seleccionar</button>
+                                <button class="absolute centrado btn btn-dark fuente1" style="font-size: 30px;" routerLink="../habitacion" (click)="this.selectorRoom(room.id)">Seleccionar</button>
                             </div>
                         </div>
                     </div>

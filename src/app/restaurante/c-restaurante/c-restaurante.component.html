@@ -1,0 +1,57 @@
+<app-cabecera></app-cabecera>
+<div class="container">
+  <div class="container-fluid">
+    <div class="grid-crud-habitaciones">
+      <div class="item-crud-habitaciones pb-3">
+        <h2 class="fuente6">New Plato</h2>
+        <p>
+          <span class="fuente6 mr-3">Nombre:</span>
+          <input style="width: 200px;border-radius: 5px;height: 40px;" class="fuente6 p-2" type="text" [(ngModel)]="plato.nombre">
+        </p>
+        <p>
+        <p>
+        <span class="fuente6 mr-3">Precio:</span>
+        <input style="width: 200px;border-radius: 5px;height: 40px;" class="fuente6 p-2" type="number" [(ngModel)]="plato.precio">
+        </p>
+
+        <p>
+          <span class="fuente6 mr-3">Tipo:</span>
+          <select style="width: 200px;border-radius: 5px;height: 40px;"  [(ngModel)]="plato.tipo">
+            <option class="fuente5 negrita" value="Desayuno">Desayuno</option>
+            <option class="fuente5 negrita" value="Almuerzo">Almuerzo</option>
+            <option class="fuente5 negrita" value="Cena">Cena</option>
+          </select>
+        </p>
+        <p>
+          <button class="fuente6 btn btn-success" (click)="this.nuevoPlato()" >Crear</button>
+        </p>
+      </div>
+      
+      <!-- LISTA DE HABITACIONES -->
+      <div class="item-crud-habitaciones ">
+        <table class="table table-dark">
+          <thead>
+            <tr >
+              <th class="fuente6" scope="col">#</th>
+              <th class="fuente5" scope="col">Tipo</th>
+              <th class="fuente5" scope="col">Nombre</th>
+              <th class="fuente5" scope="col">Precio</th>
+              <th class="fuente5" scope="col">Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let plato of platos,let indice=index">
+              <th scope="row">{{indice+1}}</th>
+              <td class="fuente5">{{plato.tipo}}</td>
+              <td class="fuente5">{{plato.nombre}}</td>
+              <td class="fuente5">{{plato.precio}}$</td>
+              <td class="fuente5"><button class="btn btn-danger negrita" (click)="this.eliminarPlato(plato.id)">eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
